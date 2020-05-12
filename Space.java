@@ -26,6 +26,26 @@ public class Space extends World
     {
         spaceBackground.scroll();
         spaceBackground1.scroll();
+
+        if(AlienShip.getAliensNum() == 3)
+        {
+            alienShips = new ArrayList();
+            AlienShip alienShip = new AlienShip();
+            addObject(alienShip,Greenfoot.getRandomNumber(1000),-100);
+            alienShips.add(alienShip);
+
+            alienShip = new AlienShip();
+            addObject(alienShip,Greenfoot.getRandomNumber(1000),-100);
+            alienShips.add(alienShip);
+
+            alienShip = new AlienShip();
+            addObject(alienShip,Greenfoot.getRandomNumber(1000),-100);
+            alienShips.add(alienShip);
+
+            AlienShip.setAliensNum(0);
+
+        }
+
     }
 
     /**
@@ -36,18 +56,19 @@ public class Space extends World
     {
         Ship ship = new Ship();
         addObject(ship,getWidth()/2,680);
-        
+
         alienShips = new ArrayList();
         AlienShip alienShip = new AlienShip();
-        addObject(alienShip,100,100);
+        addObject(alienShip,100,-100);
         alienShips.add(alienShip);
-        
+
         alienShip = new AlienShip();
-        addObject(alienShip,200,100);
+        addObject(alienShip,640,-100);
         alienShips.add(alienShip);
-        
+
         alienShip = new AlienShip();
-        addObject(alienShip,300,100);
+        addObject(alienShip,1180,-100);
         alienShips.add(alienShip);
+
     }
 }

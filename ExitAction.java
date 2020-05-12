@@ -8,12 +8,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class ExitAction implements ButtonAction
 {
-    /**
-     * Act - do whatever the Exit wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void onClick(Actor actor) 
+        public void onClick(Actor actor) 
     {
             Greenfoot.stop();
     }    
+
 }
