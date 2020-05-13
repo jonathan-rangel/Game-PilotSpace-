@@ -18,4 +18,4 @@ de no ser tcado por varios enemigos, y al mismo tiempo, evitar los disparos de l
 
 ## Diagrama de clases
 
-![Diagrama de clases](DiagramaDeClases.png)
+![Diagrama de clases](images/DiagramaDeClases.png)
