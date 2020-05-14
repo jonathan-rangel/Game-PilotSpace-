@@ -12,6 +12,7 @@ public class Space extends World
 {
     private Background spaceBackground, spaceBackground1;
     private List<AlienShip> alienShips;
+    private int timer;
     public Space()
     {    
         super(1280,720, 1, false);
@@ -43,9 +44,9 @@ public class Space extends World
             alienShips.add(alienShip);
 
             AlienShip.setAliensNum(0);
-
         }
-
+        timer++;
+        showText("Time: "+timer/100, 40, 10);
     }
 
     /**
@@ -71,4 +72,5 @@ public class Space extends World
         alienShips.add(alienShip);
 
     }
+    
 }

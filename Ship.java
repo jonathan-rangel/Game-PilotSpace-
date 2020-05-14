@@ -1,5 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.*;
+import static java.lang.System.out;
 /**
  * Write a description of class Ship here.
  * 
@@ -14,7 +15,7 @@ public class Ship extends Actor implements FireShip
     private int rotaY;
     private int i = 1;
     private static int rot;
-    
+
     public void fire()
     {
         FireShipPilot fire = new FireShipPilot();
@@ -28,8 +29,7 @@ public class Ship extends Actor implements FireShip
     {
         return rot;
     }
-    
-    
+
     public void act() 
     {   
         dirx = getX();
@@ -88,6 +88,7 @@ public class Ship extends Actor implements FireShip
         {
             if(isTouching(AlienShip.class))
             {
+                Greenfoot.setWorld(new BackgroundType());
                 getWorld().removeObject(this);
             }
         }
