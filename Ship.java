@@ -15,6 +15,7 @@ public class Ship extends Actor implements FireShip
     private int rotaY;
     private int i = 1;
     private static int rot;
+    String lastKey;
 
     public void fire()
     {
@@ -43,27 +44,30 @@ public class Ship extends Actor implements FireShip
                 fire();
             }
         }
+        lastKey = Greenfoot.getKey();
+        if(lastKey != null)
+        {
+            switch(lastKey)
+            {
+                case "a":
+                dirx-=2;
+                break;
+                
+                case "w":
+                diry-=2;
+                break;
+                
+                case "s":
+                diry+=2;
+                break;
+                
+                case "d":
+                dirx+=2;
+                break;
+            }
+            setLocation(dirx,diry);
+        }
 
-        if(Greenfoot.isKeyDown("d"))
-        {
-            dirx+=2;
-            setLocation(dirx,diry);
-        }
-        if(Greenfoot.isKeyDown("a"))
-        {
-            dirx-=2;
-            setLocation(dirx,diry);
-        }
-        if(Greenfoot.isKeyDown("w"))
-        {
-            diry-=2;
-            setLocation(dirx,diry);
-        }
-        if(Greenfoot.isKeyDown("s"))
-        {
-            diry+=2;
-            setLocation(dirx,diry);
-        }
         if(Greenfoot.mouseMoved(null))
         {
             MouseInfo mouse = Greenfoot.getMouseInfo();
@@ -80,18 +84,10 @@ public class Ship extends Actor implements FireShip
             setLocation(getWorld().getWidth(), getY());
         if(getX() == getWorld().getWidth()+2)
             setLocation(2, getY());    
-        if(isTouching(FireShipA.class))
+        if(isTouching(FireShipA.class) || isTouching(AlienShip.class) )
         {
+            Greenfoot.setWorld(new BackgroundType());
             getWorld().removeObject(this);
         }
-        else
-        {
-            if(isTouching(AlienShip.class))
-            {
-                Greenfoot.setWorld(new BackgroundType());
-                getWorld().removeObject(this);
-            }
-        }
-
     }
 }

@@ -1,6 +1,8 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import static java.lang.System.out;
 import java.util.*;
+import java.io.File;
+import java.time.*;
 
 /**
  * Write a description of class MyWorld here.
@@ -12,7 +14,7 @@ public class Space extends World
 {
     private Background spaceBackground, spaceBackground1;
     private List<AlienShip> alienShips;
-    private int timer;
+    private Instant start = Instant.now();
     public Space()
     {    
         super(1280,720, 1, false);
@@ -45,16 +47,24 @@ public class Space extends World
 
             AlienShip.setAliensNum(0);
         }
-        timer++;
-        showText("Time: "+timer/100, 40, 10);
+        Instant finish = Instant.now();
+        long timeElapsed = Duration.between(start, finish).toSeconds();
+        showText("Time: " + timeElapsed, 40, 10);
     }
-
-    /**
-     * Prepare the world for the start of the program.
-     * That is: create the initial objects and add them to the world.
-     */
+        
+    public static int getTime()
+    {
+        return 0;
+    }
+    
+    public static void setTime(int time)
+    {
+    }
+    
     private void prepare()
     {
+        File recordsFile = new File("records.txt");
+        
         Ship ship = new Ship();
         addObject(ship,getWidth()/2,680);
 

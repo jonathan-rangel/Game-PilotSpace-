@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Charge extends Actor
 {
     private int rot = 0;
-
+    
     public void setRotations()
     {
         while(rot < 360)
