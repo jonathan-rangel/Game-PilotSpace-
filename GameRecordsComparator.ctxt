@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.target=GameRecordsComparator
+comment1.params=o1\ o2
+comment1.target=int\ compare(Space,\ Space)
+numComments=2

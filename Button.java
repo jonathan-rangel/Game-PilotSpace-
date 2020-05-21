@@ -19,8 +19,7 @@ public class Button extends Actor
     public void act() 
     {
         if(Greenfoot.mouseClicked(this))
-        {
-            
+        {    
             action.onClick(this);
         }
     }    

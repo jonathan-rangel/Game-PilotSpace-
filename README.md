@@ -15,3 +15,7 @@ El punto del juego es eliminar a todos los enemigos en el menor tiempo posible.
 Principalmente el público objetivo son personas jóvenes, de entre 10 y 20 años, ya que
 en este juego, es necesario tener reflejos rápidos y mentalidad para soportar la presión
 de no ser tcado por varios enemigos, y al mismo tiempo, evitar los disparos de los mismos.
+
+## Diagrama de clases
+
+![Diagrama de clases](images/DiagramaDeClases.png)
