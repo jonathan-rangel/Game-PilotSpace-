@@ -1,6 +1,8 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.*;
+
 import java.io.File;
+
 /**
  * Write a description of class ListOfRecords here.
  * 
@@ -9,6 +11,7 @@ import java.io.File;
  */
 public class ListOfRecords extends World
 {
+
     private static int aumento = 0;
     public ListOfRecords()
     {    
@@ -18,18 +21,18 @@ public class ListOfRecords extends World
         PutButtonBack();
         PrintRecords();
     }
-    
+
     public void PutButtonBack()
     {
         Button backButton = new Button("Back.png", new BackAction());
         addObject(backButton, 65 ,50);
     }
-    
+
     public static void setAumento(int aumentoDado)
     {
         aumento = aumentoDado;
     }
-    
+
     public void PrintRecords()
     {
         ArrayList<Ship> fileOfRecords = new ArrayList<Ship>();
@@ -39,8 +42,7 @@ public class ListOfRecords extends World
         {
             showText(fileOfRecord.getNickName(), getWidth()/4, (getHeight()/2) + aumento);
             showText("" + fileOfRecord.getTimeInGame() + " seconds", (getWidth()/2) + 200 , (getHeight()/2) + aumento);
-            aumento += 50;
         }
     }
-    
+
 }

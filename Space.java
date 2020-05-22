@@ -9,9 +9,11 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.FileNotFoundException;
+
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+
 /**
  * Write a description of class MyWorld here.
  * 
@@ -24,7 +26,9 @@ public class Space extends World
     private List<AlienShip> alienShips;
     private Instant start = Instant.now();
     private static int timeInGame;
+
     private static File records;
+
     public Space()
     {    
         super(1280,720, 1, false);
@@ -95,15 +99,16 @@ public class Space extends World
     {
         File recordsFile = new File("records.txt");
         try(FileWriter writer=new FileWriter(recordsFile,true)){
-        writer.append("" + shipPlayer.getTimeInGame()).append(",").append(""+shipPlayer.getNickName()).append(System.lineSeparator());
+            writer.append("" + shipPlayer.getTimeInGame()).append(",").append(""+shipPlayer.getNickName()).append(System.lineSeparator());
         }
         catch(IOException e){
         }
-        
     }
-    
+
+   
     public static ArrayList openFile()
     {
+
         ArrayList<Ship> fileTexts = new ArrayList<Ship>();
         try{
             List<String> lines= Files.readAllLines(Paths.get("records.txt"));
@@ -115,6 +120,8 @@ public class Space extends World
                 fileTexts.add(shipPlayers);
             }
         } catch (IOException e) {
+
+            
         }
         return fileTexts;
     }

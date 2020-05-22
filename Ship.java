@@ -2,7 +2,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.*;
 import static java.lang.System.out;
 
-public class Ship extends Actor implements FireShip{
+public class Ship extends Actor implements FireShip
+{
+
     private int moveXShip;
     private int moveYShip;
     private int rotationXShip;
@@ -15,20 +17,20 @@ public class Ship extends Actor implements FireShip{
     private int timeInGame;
 
     public static Comparator<Ship> ShipTimeComparator = new Comparator<Ship>() 
-    {
-
-        public int compare(Ship s1, Ship s2) 
         {
-            int shipTime1 = s1.getTimeInGame();
-            int shipTime2 = s2.getTimeInGame();
 
-            //ascending order
-            return shipTime1 - shipTime2;
+            public int compare(Ship s1, Ship s2) 
+            {
+                int shipTime1 = s1.getTimeInGame();
+                int shipTime2 = s2.getTimeInGame();
 
-            //descending order
-            //return StudentName2.compareTo(StudentName1);
-        }
-    };
+                //ascending order
+                return shipTime1 - shipTime2;
+
+                //descending order
+                //return StudentName2.compareTo(StudentName1);
+            }
+        };
 
     public void setNickName(String nickName)
     {
@@ -72,6 +74,9 @@ public class Ship extends Actor implements FireShip{
 
         fireShipDirection();
 
+        moveShipAtAnotherEdgeOfTheSpace();
+
+        fireShipDirection();
         moveShipAtAnotherEdgeOfTheSpace();
 
         deleteShip();   
