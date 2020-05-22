@@ -9,12 +9,15 @@ import java.util.*;
  */
 public class BackgroundType extends World
 {
-    private String key;
-    private int space;
+    private static String nickName;
     private boolean typeNickname = true;
-    public BackgroundType()
+    private Ship shipPlayer;
+    public BackgroundType(Ship ship)
     {      
-        super(1280, 720, 1, false);  
+        super(1280, 720, 1, false);
+        GreenfootImage drawedImage = new GreenfootImage("GameOver.png");//the image that is drawed;
+        getBackground().drawImage(drawedImage,(getWidth()/4) - 25 , 100);
+        shipPlayer = ship;
     }
 
     
@@ -22,14 +25,22 @@ public class BackgroundType extends World
     {
         if(typeNickname)
         {
-            key = Greenfoot.ask("Type your Nickname or ID");
-            showText("Your nickname or ID is: ", getWidth()/2, getHeight()/2);
-            showText(key, getWidth()/2, (getHeight()/2) + 50);
-            showText("An your time is: " + Space.getTime(), getWidth()/2, (getHeight()/2) + 100);
+            nickName = Greenfoot.ask("Type your Nickname or ID");
+            showText("Your nickname or ID is: ", getWidth()/2, getHeight()/2 + 100);
+            showText(nickName, getWidth()/2, (getHeight()/2) + 150);
+            showText("And your time is: " + Space.getTime() + " seconds", getWidth()/2, (getHeight()/2) + 200);
+            shipPlayer.setNickName(nickName);
+            shipPlayer.setTimeInSpace(Space.getTime());
+            Space.save(shipPlayer);
             Space.setTime(0);
-            Greenfoot.delay(1000);
+            Greenfoot.delay(500);
             Greenfoot.setWorld(new MainTitle());
             typeNickname = false;
         }
+    }
+    
+    public static String getNickname()
+    {
+        return nickName;
     }
 }

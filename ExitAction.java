@@ -8,9 +8,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class ExitAction implements ButtonAction
 {
-        public void onClick(Actor actor) 
+    public void onClick(Actor actor) 
     {
-            Greenfoot.stop();
+        Greenfoot.stop();
     }    
 
 }

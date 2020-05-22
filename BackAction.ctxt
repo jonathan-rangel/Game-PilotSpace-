@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.target=BackAction
+comment1.params=actor
+comment1.target=void\ onClick(greenfoot.Actor)
+numComments=2

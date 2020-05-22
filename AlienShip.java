@@ -2,12 +2,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import static java.lang.System.out;
 import java.util.*;
 
-/**
- * Write a description of class AlienShip here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class AlienShip extends Actor implements FireShip
 {
 
@@ -26,6 +20,35 @@ public class AlienShip extends Actor implements FireShip
 
     public void act() 
     {
+        moveAlienShipAndPutInAnotherEdgeOfTheSpace();
+
+        fireAlienShip();
+        
+        deleteAlienShip();
+
+    }
+    
+    public void deleteAlienShip()
+    {
+        if(isTouching(FireShipPilot.class))
+        {
+            getWorld().removeObject(this);
+            aliensNum ++;
+        }
+    }
+    
+    public void fireAlienShip()
+    {
+        long curTime  = System.currentTimeMillis();
+        if (curTime >= lastAdded + 1000)
+        {
+            fire();
+            lastAdded  = curTime;
+        }
+    }
+    
+    public void moveAlienShipAndPutInAnotherEdgeOfTheSpace()
+    {
         setLocation(getX(),getY() + moveY);
         if(dir == 0)
         {
@@ -42,21 +65,8 @@ public class AlienShip extends Actor implements FireShip
         
         if(getY() == getWorld().getHeight())
             setLocation(getX(), -100);
-
-        long curTime  = System.currentTimeMillis();
-        if (curTime >= lastAdded + 1000)
-        {
-            fire();
-            lastAdded  = curTime;
-        }
-        if(isTouching(FireShipPilot.class))
-        {
-            getWorld().removeObject(this);
-            aliensNum ++;
-        }
-
     }
-
+    
     public static int getAliensNum()
     {
         return aliensNum;

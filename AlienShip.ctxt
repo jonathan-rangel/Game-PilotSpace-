@@ -1,12 +1,17 @@
 #BlueJ class context
 comment0.target=AlienShip
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ AlienShip\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=
 comment1.target=void\ fire()
 comment2.params=
 comment2.target=void\ act()
 comment3.params=
-comment3.target=int\ getAliensNum()
-comment4.params=aliensNumm
-comment4.target=void\ setAliensNum(int)
-numComments=5
+comment3.target=void\ deleteAlienShip()
+comment4.params=
+comment4.target=void\ fireAlienShip()
+comment5.params=
+comment5.target=void\ moveAlienShipAndPutInAnotherEdgeOfTheSpace()
+comment6.params=
+comment6.target=int\ getAliensNum()
+comment7.params=aliensNumm
+comment7.target=void\ setAliensNum(int)
+numComments=8
