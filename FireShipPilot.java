@@ -8,6 +8,24 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class FireShipPilot extends Actor
 {
+    private static GreenfootSound soundTrack = new GreenfootSound("SoundOfTheShooting.mp3"); 
+    
+    public FireShipPilot()
+    {
+        soundTrack.setVolume(25);
+        playMusic();
+    }
+    
+    public static void playMusic()
+    {
+        soundTrack.play();
+    }
+    
+    public static void stopMusic()
+    {
+        soundTrack.stop();
+    }
+    
     public void act() 
     {
         move(7);

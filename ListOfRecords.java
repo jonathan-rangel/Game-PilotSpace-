@@ -35,13 +35,19 @@ public class ListOfRecords extends World
 
     public void PrintRecords()
     {
+        int i = 0;
         ArrayList<Ship> fileOfRecords = new ArrayList<Ship>();
         fileOfRecords = Space.openFile();
         Collections.sort(fileOfRecords, Ship.ShipTimeComparator);
         for(Ship fileOfRecord: fileOfRecords)
         {
-            showText(fileOfRecord.getNickName(), getWidth()/4, (getHeight()/2) + aumento);
-            showText("" + fileOfRecord.getTimeInGame() + " seconds", (getWidth()/2) + 200 , (getHeight()/2) + aumento);
+            if(i < 7)
+            {
+                showText(fileOfRecord.getNickName(), (getWidth()/4) + 50, (getHeight()/2) + aumento);
+                showText("" + fileOfRecord.getTimeInGame() + " seconds", (getWidth()/2) + 200 , (getHeight()/2) + aumento);
+                aumento += 50;
+            }
+            i ++;
         }
     }
 

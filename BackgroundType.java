@@ -35,6 +35,7 @@ public class BackgroundType extends World
             Space.save(shipPlayer);
             Space.setTime(0);
             Greenfoot.delay(500);
+            Space.stopMusic();
             Greenfoot.setWorld(new MainTitle());
             typeNickname = false;
         }

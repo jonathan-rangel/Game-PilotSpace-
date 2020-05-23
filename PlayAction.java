@@ -14,6 +14,7 @@ public class PlayAction implements ButtonAction
             Charge charge = new Charge();
             actor.getWorld().addObject(charge,1244,678);
             charge.setRotations();
+            MainTitle.stopMusic();
             Greenfoot.setWorld(new Space());
     }
 }

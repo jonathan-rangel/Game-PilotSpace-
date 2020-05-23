@@ -10,7 +10,7 @@ public class MainTitle extends World
 {
 
     private int pos;
-    
+    private static GreenfootSound soundTrack = new GreenfootSound("MusicFromMainMenu.mp3");
     public MainTitle()
     {    
         super(1280,720, 1, false);    
@@ -28,7 +28,18 @@ public class MainTitle extends World
         addObject(records,getWidth()/2,pos+=125);
         Button exit = new Button("Exit.png", new ExitAction());
         addObject(exit,getWidth()/2,pos+=125);
+        playMusic();
         
+    }
+    
+    public static void playMusic()
+    {
+        soundTrack.play();
+    }
+    
+    public static void stopMusic()
+    {
+        soundTrack.stop();
     }
 
 }

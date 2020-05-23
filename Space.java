@@ -26,9 +26,8 @@ public class Space extends World
     private List<AlienShip> alienShips;
     private Instant start = Instant.now();
     private static int timeInGame;
-
     private static File records;
-
+    private static GreenfootSound soundTrack = new GreenfootSound("MusicInTheSpace.mp3");    
     public Space()
     {    
         super(1280,720, 1, false);
@@ -36,6 +35,7 @@ public class Space extends World
         addObject(spaceBackground, getWidth()/2, getHeight()/2);
         spaceBackground1 = new Background();
         addObject(spaceBackground1, getWidth()/2, getHeight() - getHeight() -getHeight()/2);
+        playMusic();
         prepare();
     }
 
@@ -48,15 +48,15 @@ public class Space extends World
         {
             alienShips = new ArrayList();
             AlienShip alienShip = new AlienShip();
-            addObject(alienShip,Greenfoot.getRandomNumber(1000),-100);
+            addObject(alienShip,Greenfoot.getRandomNumber(1000),-200);
             alienShips.add(alienShip);
 
             alienShip = new AlienShip();
-            addObject(alienShip,Greenfoot.getRandomNumber(1000),-100);
+            addObject(alienShip,Greenfoot.getRandomNumber(1000),-200);
             alienShips.add(alienShip);
 
             alienShip = new AlienShip();
-            addObject(alienShip,Greenfoot.getRandomNumber(1000),-100);
+            addObject(alienShip,Greenfoot.getRandomNumber(1000),-200);
             alienShips.add(alienShip);
 
             AlienShip.setAliensNum(0);
@@ -83,15 +83,15 @@ public class Space extends World
 
         alienShips = new ArrayList();
         AlienShip alienShip = new AlienShip();
-        addObject(alienShip,100,-100);
+        addObject(alienShip,Greenfoot.getRandomNumber(1000),-200);
         alienShips.add(alienShip);
 
         alienShip = new AlienShip();
-        addObject(alienShip,640,-100);
+        addObject(alienShip,Greenfoot.getRandomNumber(1000),-200);
         alienShips.add(alienShip);
 
         alienShip = new AlienShip();
-        addObject(alienShip,1180,-100);
+        addObject(alienShip,Greenfoot.getRandomNumber(1000),-200);
         alienShips.add(alienShip);
     }
 
@@ -124,5 +124,15 @@ public class Space extends World
             
         }
         return fileTexts;
+    }
+    
+    public static void playMusic()
+    {
+        soundTrack.play();
+    }
+    
+    public static void stopMusic()
+    {
+        soundTrack.stop();
     }
 }

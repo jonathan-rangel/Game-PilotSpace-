@@ -10,6 +10,7 @@ public class ExitAction implements ButtonAction
 {
     public void onClick(Actor actor) 
     {
+        MainTitle.stopMusic();
         Greenfoot.stop();
     }    
 
