@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.target=BossShip
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ BossShip\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=void\ act()
+comment2.params=
+comment2.target=void\ fireBossAlienShip()
+comment3.params=
+comment3.target=void\ fire()
+comment4.params=
+comment4.target=void\ deleteBossShip()
+comment5.params=
+comment5.target=boolean\ returnStateOfTheBossShip()
+comment6.params=state
+comment6.target=void\ setStateOfTheBossShip(boolean)
+comment7.params=
+comment7.target=void\ moveBossAlienShipAndPutInAnotherEdgeOfTheSpace()
+numComments=8

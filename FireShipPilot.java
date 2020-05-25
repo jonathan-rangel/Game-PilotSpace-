@@ -10,6 +10,12 @@ public class FireShipPilot extends Actor
 {
     private static GreenfootSound soundTrack = new GreenfootSound("SoundOfTheShooting.mp3"); 
     
+    public void act() 
+    {
+        move(7);
+        deleteFireShip();
+    }    
+      
     public FireShipPilot()
     {
         soundTrack.setVolume(25);
@@ -26,8 +32,13 @@ public class FireShipPilot extends Actor
         soundTrack.stop();
     }
     
-    public void act() 
+    public void deleteFireShip()
     {
-        move(7);
-    }    
+        if(isTouching(AlienShip.class) || isTouching(BossShip.class))
+        {
+            getWorld().removeObject(this);
+        }
+    }
+    
+    
 }

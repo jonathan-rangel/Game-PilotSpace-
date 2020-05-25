@@ -27,7 +27,8 @@ public class Space extends World
     private Instant start = Instant.now();
     private static int timeInGame;
     private static File records;
-    private static GreenfootSound soundTrack = new GreenfootSound("MusicInTheSpace.mp3");    
+    private static GreenfootSound soundTrack = new GreenfootSound("MusicInTheSpace.mp3");
+    private static int levelNum = 1;
     public Space()
     {    
         super(1280,720, 1, false);
@@ -36,6 +37,7 @@ public class Space extends World
         spaceBackground1 = new Background();
         addObject(spaceBackground1, getWidth()/2, getHeight() - getHeight() -getHeight()/2);
         playMusic();
+        showText("Level " + levelNum, 1200, 10);
         prepare();
     }
 
@@ -43,24 +45,59 @@ public class Space extends World
     {
         spaceBackground.scroll();
         spaceBackground1.scroll();
+        
+        if(AlienShip.getAliensNum() == 3 && BossShip.returnStateOfTheBossShip() == false)
+        {
+            levelNum ++;
+            
+            BossShip bossShip = new BossShip();
+            addObject(bossShip,getWidth()/2,-100);
+            
+            alienShips = new ArrayList();
+            AlienShip alienShip = new AlienShip();
+            addObject(alienShip,Greenfoot.getRandomNumber(1000),Greenfoot.getRandomNumber(300) * -1);
+            alienShips.add(alienShip);
 
-        if(AlienShip.getAliensNum() == 3)
+            alienShip = new AlienShip();
+            addObject(alienShip,Greenfoot.getRandomNumber(1000),Greenfoot.getRandomNumber(300) * -1);
+            alienShips.add(alienShip);
+
+            alienShip = new AlienShip();
+            addObject(alienShip,Greenfoot.getRandomNumber(1000),Greenfoot.getRandomNumber(300) * -1);
+            alienShips.add(alienShip);
+            
+            showText("Level " + levelNum, 1200, 10);
+            AlienShip.setAliensNum(0);
+            
+        }
+        
+        if(BossShip.returnStateOfTheBossShip())
         {
             alienShips = new ArrayList();
             AlienShip alienShip = new AlienShip();
-            addObject(alienShip,Greenfoot.getRandomNumber(1000),-200);
+            addObject(alienShip,Greenfoot.getRandomNumber(1000),Greenfoot.getRandomNumber(300) * -1);
             alienShips.add(alienShip);
 
             alienShip = new AlienShip();
-            addObject(alienShip,Greenfoot.getRandomNumber(1000),-200);
+            addObject(alienShip,Greenfoot.getRandomNumber(1000),Greenfoot.getRandomNumber(300) * -1);
             alienShips.add(alienShip);
 
             alienShip = new AlienShip();
-            addObject(alienShip,Greenfoot.getRandomNumber(1000),-200);
+            addObject(alienShip,Greenfoot.getRandomNumber(1000),Greenfoot.getRandomNumber(300) * -1);
             alienShips.add(alienShip);
-
+            
+            alienShip = new AlienShip();
+            addObject(alienShip,Greenfoot.getRandomNumber(1000),Greenfoot.getRandomNumber(300) * -1);
+            alienShips.add(alienShip);
+            
+            alienShip = new AlienShip();
+            addObject(alienShip,Greenfoot.getRandomNumber(1000),Greenfoot.getRandomNumber(300) * -1);
+            alienShips.add(alienShip);
+            
             AlienShip.setAliensNum(0);
+            BossShip.setStateOfTheBossShip(false);
         }
+        
         Instant finish = Instant.now();
         long timeElapsed = Duration.between(start, finish).toSeconds();
         showText("Time: " + timeElapsed, 40, 10);
@@ -83,15 +120,15 @@ public class Space extends World
 
         alienShips = new ArrayList();
         AlienShip alienShip = new AlienShip();
-        addObject(alienShip,Greenfoot.getRandomNumber(1000),-200);
+        addObject(alienShip,Greenfoot.getRandomNumber(1000),Greenfoot.getRandomNumber(200) * -1);
         alienShips.add(alienShip);
 
         alienShip = new AlienShip();
-        addObject(alienShip,Greenfoot.getRandomNumber(1000),-200);
+        addObject(alienShip,Greenfoot.getRandomNumber(1000),Greenfoot.getRandomNumber(200) * -1);
         alienShips.add(alienShip);
 
         alienShip = new AlienShip();
-        addObject(alienShip,Greenfoot.getRandomNumber(1000),-200);
+        addObject(alienShip,Greenfoot.getRandomNumber(1000),Greenfoot.getRandomNumber(200) * -1);
         alienShips.add(alienShip);
     }
 

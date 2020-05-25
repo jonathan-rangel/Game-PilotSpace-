@@ -25,10 +25,10 @@ public class Ship extends Actor implements FireShip
                 int shipTime2 = s2.getTimeInGame();
 
                 //ascending order
-                return shipTime1 - shipTime2;
+                //return shipTime1 - shipTime2;
 
                 //descending order
-                //return StudentName2.compareTo(StudentName1);
+                return shipTime2 - shipTime1;
             }
         };
 

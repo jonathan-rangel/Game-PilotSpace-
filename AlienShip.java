@@ -63,7 +63,7 @@ public class AlienShip extends Actor implements FireShip
                 dir = 0;
         }
         
-        if(getY() == getWorld().getHeight())
+        if(getY() >= getWorld().getHeight())
             setLocation(getX(), -100);
     }
     
