@@ -18,11 +18,11 @@ public class ListOfRecords extends World
         super(1280, 720, 1, false);
         GreenfootImage drawedImage = new GreenfootImage("LastRecords.png");
         getBackground().drawImage(drawedImage,(getWidth()/4) - 50 , 100);
-        PutButtonBack();
-        PrintRecords();
+        putButtonBack();
+        printRecords();
     }
 
-    public void PutButtonBack()
+    public void putButtonBack()
     {
         Button backButton = new Button("Back.png", new BackAction());
         addObject(backButton, 65 ,50);
@@ -33,7 +33,7 @@ public class ListOfRecords extends World
         aumento = aumentoDado;
     }
 
-    public void PrintRecords()
+    public void printRecords()
     {
         int i = 0;
         ArrayList<Ship> fileOfRecords = new ArrayList<Ship>();

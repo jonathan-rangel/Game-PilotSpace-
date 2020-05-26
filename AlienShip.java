@@ -7,9 +7,11 @@ public class AlienShip extends Actor implements FireShip
 
     private int moveY = 2;
     private int moveX = 2;
-    private int dir = 0;
+    private int direction = 0;
+    private static final int LEFT = 0;
+    private static final int RIGHT = 1;
     private static int aliensNum = 0;
-    long lastAdded = System.currentTimeMillis();
+    long TimelastAdded = System.currentTimeMillis();
 
     public void fire()
     {
@@ -40,27 +42,27 @@ public class AlienShip extends Actor implements FireShip
     public void fireAlienShip()
     {
         long curTime  = System.currentTimeMillis();
-        if (curTime >= lastAdded + 1000)
+        if (curTime >= TimelastAdded + 1000)
         {
             fire();
-            lastAdded  = curTime;
+            TimelastAdded  = curTime;
         }
     }
     
     public void moveAlienShipAndPutInAnotherEdgeOfTheSpace()
     {
         setLocation(getX(),getY() + moveY);
-        if(dir == 0)
+        if(direction == LEFT)
         {
             setLocation(getX() - moveX, getY());
             if(getX() <= 0)
-                dir = 1;
+                direction = RIGHT;
         }
         else
         {
             setLocation(getX() + moveX, getY());
             if(getX() >= getWorld().getWidth())
-                dir = 0;
+                direction = LEFT;
         }
         
         if(getY() >= getWorld().getHeight())
