@@ -14,16 +14,16 @@ public class BossShip extends Actor implements FireShip
     private int lifeBoss = 50;
     private static boolean bossDestroyed = false;
     long lastAdded = System.currentTimeMillis();
-    
+
     public void act() 
     {
         moveBossAlienShipAndPutInAnotherEdgeOfTheSpace();
-        
+
         fireBossAlienShip();
-        
+
         deleteBossShip();
     } 
-    
+
     public void fireBossAlienShip()
     {
         long curTime  = System.currentTimeMillis();
@@ -33,27 +33,32 @@ public class BossShip extends Actor implements FireShip
             lastAdded  = curTime;
         }
     }
-    
+
     public void fire()
     {
         FireShipA fire = new FireShipA();
         getWorld().addObject(fire, getX(), getY());
         fire.setRotation(Ship.getRotations());
     }
-    
+
     public void deleteBossShip()
     {
-        if(isTouching(FireShipPilot.class))
+
+        Actor fireShipPilot = getOneIntersectingObject(FireShipPilot.class);
+
+        if(fireShipPilot != null)
         {
+            getWorld().removeObject(fireShipPilot);
             lifeBoss -= 10;
             if(lifeBoss == 0)
             {
                 getWorld().removeObject(this);
                 bossDestroyed = true;
             }
+
         }
     }
-    
+
     public static boolean returnStateOfTheBossShip()
     {
         return bossDestroyed;
@@ -63,7 +68,7 @@ public class BossShip extends Actor implements FireShip
     {
         bossDestroyed = state;
     }
-    
+
     public void moveBossAlienShipAndPutInAnotherEdgeOfTheSpace()
     {
         setLocation(getX(),getY() + moveY);
@@ -79,9 +84,9 @@ public class BossShip extends Actor implements FireShip
             if(getX() >= getWorld().getWidth())
                 dir = 0;
         }
-        
+
         if(getY() >= getWorld().getHeight())
             setLocation(getX(), -100);
     }
-    
+
 }

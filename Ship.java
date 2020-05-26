@@ -12,6 +12,7 @@ public class Ship extends Actor implements FireShip
     private int i = 1;
     private static int rotationShip;
     String lastKey;
+    private int fireDelay;
 
     private String nickName;
     private int timeInGame;
@@ -134,12 +135,18 @@ public class Ship extends Actor implements FireShip
     public void fireShipDirection()
     {
         MouseInfo mi = Greenfoot.getMouseInfo();
+        if(fireDelay > 0)
+            fireDelay -= 1;
         if (mi != null)
         {
             int buttonNumber = mi.getButton();
             if (buttonNumber == 1)
             {
-                fire();
+                if(fireDelay == 0)
+                {
+                    fire();
+                    fireDelay = 30;
+                }
             }
         }
     }

@@ -32,11 +32,15 @@ public class AlienShip extends Actor implements FireShip
     
     public void deleteAlienShip()
     {
-        if(isTouching(FireShipPilot.class))
+        Actor fireShipPilot = getOneIntersectingObject(FireShipPilot.class);
+        
+        if(fireShipPilot != null)
         {
+            getWorld().removeObject(fireShipPilot);
             getWorld().removeObject(this);
             aliensNum ++;
         }
+        
     }
     
     public void fireAlienShip()

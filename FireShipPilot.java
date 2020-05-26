@@ -13,7 +13,7 @@ public class FireShipPilot extends Actor
     public void act() 
     {
         move(7);
-        deleteFireShip();
+        
     }    
       
     public FireShipPilot()
@@ -32,13 +32,7 @@ public class FireShipPilot extends Actor
         soundTrack.stop();
     }
     
-    public void deleteFireShip()
-    {
-        if(isTouching(AlienShip.class) || isTouching(BossShip.class))
-        {
-            getWorld().removeObject(this);
-        }
-    }
+ 
     
     
 }
