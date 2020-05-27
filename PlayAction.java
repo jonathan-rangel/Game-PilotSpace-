@@ -11,6 +11,7 @@ public class PlayAction implements ButtonAction
 
     public void onClick(Actor actor) 
     {
+            Button.soundOfbotton();
             Charge charge = new Charge();
             actor.getWorld().addObject(charge,1244,678);
             charge.setRotations();

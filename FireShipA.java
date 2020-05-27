@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class FireShipA extends Actor
+public class FireShipA extends Fire
 {
     /**
      * Act - do whatever the FireShipA wants to do. This method is called whenever
@@ -15,5 +15,6 @@ public class FireShipA extends Actor
     public void act() 
     {
         move(5);
+        removeIfFireShipOutOfTheWorld();
     }    
 }

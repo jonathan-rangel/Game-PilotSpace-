@@ -14,6 +14,7 @@ public class RecordsAction implements ButtonAction
      */
     public void onClick(Actor actor) 
     {
+        Button.soundOfbotton();
         Greenfoot.setWorld(new ListOfRecords());
     }    
 }

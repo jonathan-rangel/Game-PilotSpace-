@@ -86,13 +86,6 @@ public class Space extends World
             addObject(alienShip,Greenfoot.getRandomNumber(1000),Greenfoot.getRandomNumber(300) * -1);
             alienShips.add(alienShip);
             
-            alienShip = new AlienShip();
-            addObject(alienShip,Greenfoot.getRandomNumber(1000),Greenfoot.getRandomNumber(300) * -1);
-            alienShips.add(alienShip);
-            
-            alienShip = new AlienShip();
-            addObject(alienShip,Greenfoot.getRandomNumber(1000),Greenfoot.getRandomNumber(300) * -1);
-            alienShips.add(alienShip);
             
             AlienShip.setAliensNum(0);
             BossShip.setStateOfTheBossShip(false);

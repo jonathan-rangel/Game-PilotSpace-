@@ -1,15 +1,9 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * Write a description of class Button here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class Button extends Actor 
 {
     private ButtonAction action;
-    
+    private static GreenfootSound soundTrack = new GreenfootSound("BotonSound.mp3");
     public Button(String image, ButtonAction action)
     {
         setImage(image);
@@ -22,5 +16,11 @@ public class Button extends Actor
         {    
             action.onClick(this);
         }
-    }    
+    }
+    
+    public static void soundOfbotton()
+    {
+        soundTrack.setVolume(25);
+        soundTrack.play();
+    }
 }
