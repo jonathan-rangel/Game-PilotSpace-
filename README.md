@@ -21,4 +21,4 @@ de no ser tcado por varios enemigos, y al mismo tiempo, evitar los disparos de l
 ![Diagrama de clases](images/DiagramaDeClases.png)
 
 ## Video de demostración de PilotSpace
-![Video](https://www.youtube.com/watch?v=jrc0CyBh93Q)
+https://www.youtube.com/watch?v=jrc0CyBh93Q
