@@ -33,7 +33,7 @@ public class BackgroundType extends World
             shipPlayer.setNickName(nickName);
             shipPlayer.setTimeInSpace(Space.getTime());
             Space.save(shipPlayer);
-            Space.setTime(0);
+            Space.setLevel(1);
             Greenfoot.delay(500);
             Space.stopMusic();
             Greenfoot.setWorld(new MainTitle());

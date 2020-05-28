@@ -14,12 +14,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-/**
- * Write a description of class MyWorld here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class Space extends World
 {
     private Background spaceBackground, spaceBackground1;
@@ -102,8 +96,9 @@ public class Space extends World
         return timeInGame;
     }
 
-    public static void setTime(int time)
+    public static void setLevel(int level)
     {
+        levelNum = level;
     }
 
     private void prepare()

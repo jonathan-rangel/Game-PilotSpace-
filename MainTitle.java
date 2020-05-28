@@ -34,6 +34,7 @@ public class MainTitle extends World
     
     public static void playMusic()
     {
+        soundTrack.setVolume(50);
         soundTrack.play();
     }
     
