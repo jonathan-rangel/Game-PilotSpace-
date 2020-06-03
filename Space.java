@@ -62,7 +62,7 @@ public class Space extends World
                 addObject(bossShip2,Greenfoot.getRandomNumber(1000),Greenfoot.getRandomNumber(300) * -1);
             }
 
-            AlienShip.setAliensNum(0);
+            AlienShip.resetAliensNum();
             bossAliens ++;
         }
 
@@ -90,7 +90,7 @@ public class Space extends World
             alienShips.add(alienShip);
             
             
-            AlienShip.setAliensNum(0);
+            AlienShip.resetAliensNum();
             showText("Level " + levelNum, 1200, 10);
             BossShip.setStateOfTheBossShip(false);
         }
