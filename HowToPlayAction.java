@@ -11,6 +11,5 @@ public class HowToPlayAction implements ButtonAction
     public void onClick(Actor actor) 
     {
         Greenfoot.setWorld(new Controls());
-        Button.soundOfbotton();
-    }    
+    }
 }

@@ -11,8 +11,8 @@ import java.io.File;
  */
 public class ListOfRecords extends World
 {
-
-    private static int aumento = 0;
+    private static final int MAX_RECORDS_TO_PRINT = 7;
+    //private static int aumento = 0;
     public ListOfRecords()
     {    
         super(1280, 720, 1, false);
@@ -28,20 +28,21 @@ public class ListOfRecords extends World
         addObject(backButton, 65 ,50);
     }
 
-    public static void setAumento(int aumentoDado)
+    /*public static void setAumento(int aumentoDado)
     {
         aumento = aumentoDado;
-    }
+    }*/
 
     public void printRecords()
     {
         int i = 0;
+        int aumento = 0;
         ArrayList<Ship> fileOfRecords = new ArrayList<Ship>();
         fileOfRecords = Space.openFile();
         Collections.sort(fileOfRecords, Ship.ShipTimeComparator);
         for(Ship fileOfRecord: fileOfRecords)
         {
-            if(i < 7)
+            if(i < MAX_RECORDS_TO_PRINT)
             {
                 showText(fileOfRecord.getNickName(), (getWidth()/4) + 50, (getHeight()/2) + aumento);
                 showText("" + fileOfRecord.getTimeInGame() + " seconds", (getWidth()/2) + 200 , (getHeight()/2) + aumento);

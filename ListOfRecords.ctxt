@@ -5,8 +5,7 @@ comment1.params=
 comment1.target=ListOfRecords()
 comment2.params=
 comment2.target=void\ putButtonBack()
-comment3.params=aumentoDado
-comment3.target=void\ setAumento(int)
-comment4.params=
-comment4.target=void\ printRecords()
-numComments=5
+comment3.params=
+comment3.target=void\ printRecords()
+comment3.text=public\ static\ void\ setAumento(int\ aumentoDado)\r\n\ \ \ \ {\r\n\ \ \ \ \ \ \ \ aumento\ \=\ aumentoDado;\r\n}
+numComments=4

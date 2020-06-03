@@ -1,27 +1,35 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-import static java.lang.System.out; 
+import greenfoot.Actor;
+import greenfoot.GreenfootImage;
 
-public class Click extends Actor
-{
-    public static int maxTransparency = 255;
-    long TimelastAdded = System.currentTimeMillis();
+
+public class Click extends Actor {
+    private static final int MAX_TRANSPARENCY = 255;
+    private static final int OFFSET_TRANSPARENCY = 10;
+    private long timeLastAdded = System.currentTimeMillis();
+    private int currentTransparency = 255;
+    private int direction = 1;
     
-    public void act() 
-    { 
-        long curTime  = System.currentTimeMillis();
-        if (curTime >= TimelastAdded + 5000)
-        {
-            flashingButton(0);
-            TimelastAdded  = curTime;
-        }
-        else
-            flashingButton(maxTransparency);
-    }    
+    
+    public Click(){
+    }
 
-    public void flashingButton(int adjust)
-    {
+    public void act() {
+        long curTime = System.currentTimeMillis();
+        if (curTime >= timeLastAdded + 15) {
+            flashingButton();
+            timeLastAdded = curTime;
+        }
+    }
+
+    public void flashingButton() {
+        
+        currentTransparency += OFFSET_TRANSPARENCY * direction;
+        if (currentTransparency >= MAX_TRANSPARENCY || currentTransparency < 0) {
+            direction *= -1;
+            currentTransparency += OFFSET_TRANSPARENCY * direction;
+        }
         GreenfootImage image = getImage();
-        image.setTransparency(adjust);
+        image.setTransparency(currentTransparency);
         setImage(image);
     }
 

@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Title extends World
 {
+    private Click click;
 
     /**
      * Constructor for objects of class Title.
@@ -26,9 +27,11 @@ public class Title extends World
  
     public void act()
     {
-        Greenfoot.delay(50);
-        Click click = new Click();
-        addObject(click,1074,688);
+        if(click == null) {
+            Greenfoot.delay(50);
+            click = new Click();
+            addObject(click, 1074, 688);
+        }
         if(Greenfoot.mouseClicked(this))
             Greenfoot.setWorld(new MainTitle());
     }

@@ -5,5 +5,5 @@ comment1.target=Button(java.lang.String,\ ButtonAction)
 comment2.params=
 comment2.target=void\ act()
 comment3.params=
-comment3.target=void\ soundOfbotton()
+comment3.target=void\ soundOfButton()
 numComments=4

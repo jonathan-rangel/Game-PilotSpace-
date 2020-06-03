@@ -21,8 +21,9 @@ public class Space extends World
     private Instant start = Instant.now();
     private static int timeInGame;
     private static File records;
-    private static GreenfootSound soundTrack = new GreenfootSound("MusicInTheSpace.mp3");
+    private final static GreenfootSound soundTrack = new GreenfootSound("MusicInTheSpace.mp3");
     private static int levelNum = 1;
+
     public Space()
     {    
         super(1280,720, 1, false);
@@ -43,7 +44,7 @@ public class Space extends World
         if(AlienShip.getAliensNum() == 3 && BossShip.returnStateOfTheBossShip() == false)
         {
             levelNum ++;
-            
+
             BossShip bossShip = new BossShip();
             addObject(bossShip,getWidth()/2,-100);
             
@@ -61,7 +62,7 @@ public class Space extends World
             alienShips.add(alienShip);
             
             showText("Level " + levelNum, 1200, 10);
-            AlienShip.setAliensNum(0);
+            AlienShip.resetAliensNum();
             
         }
         
@@ -81,7 +82,7 @@ public class Space extends World
             alienShips.add(alienShip);
             
             
-            AlienShip.setAliensNum(0);
+            AlienShip.resetAliensNum();
             BossShip.setStateOfTheBossShip(false);
         }
         
@@ -127,6 +128,7 @@ public class Space extends World
             writer.append("" + shipPlayer.getTimeInGame()).append(",").append(""+shipPlayer.getNickName()).append(System.lineSeparator());
         }
         catch(IOException e){
+            e.printStackTrace();
         }
     }
 
@@ -145,7 +147,7 @@ public class Space extends World
                 fileTexts.add(shipPlayers);
             }
         } catch (IOException e) {
-
+            e.printStackTrace();
             
         }
         return fileTexts;

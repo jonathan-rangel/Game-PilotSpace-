@@ -13,12 +13,13 @@ public class Button extends Actor
     public void act() 
     {
         if(Greenfoot.mouseClicked(this))
-        {    
+        {
+            soundOfButton();
             action.onClick(this);
         }
     }
     
-    public static void soundOfbotton()
+    private void soundOfButton()
     {
         soundTrack.setVolume(25);
         soundTrack.play();

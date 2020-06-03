@@ -1,6 +1,6 @@
-import greenfoot.*; 
-
-public interface FireShip  
-{
+public interface FireShip {
+    /**
+     *
+     */
     void fire();
 }

@@ -10,9 +10,9 @@ import java.util.*;
 public class BackgroundType extends World
 {
     private static String nickName;
-    private int space;
     private boolean typeNickname = true;
-    private Ship shipPlayer;
+    private final Ship shipPlayer;
+
     public BackgroundType(Ship ship)
     {      
         super(1280, 720, 1, false);

@@ -1,5 +1,7 @@
 #BlueJ class context
 comment0.target=ButtonAction
+comment0.text=\r\n\ Action\ performed\ by\ buttons\r\n
 comment1.params=actor
 comment1.target=void\ onClick(greenfoot.Actor)
+comment1.text=\r\n\ Action\ to\ be\ executed\ when\ a\ button\ is\ clicked\r\n\r\n\ @param\ actor\ Actual\ button\ being\ clicked\r\n
 numComments=2

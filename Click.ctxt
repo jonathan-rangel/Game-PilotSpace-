@@ -1,7 +1,9 @@
 #BlueJ class context
 comment0.target=Click
 comment1.params=
-comment1.target=void\ act()
-comment2.params=adjust
-comment2.target=void\ flashingButton(int)
-numComments=3
+comment1.target=Click()
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ flashingButton()
+numComments=4

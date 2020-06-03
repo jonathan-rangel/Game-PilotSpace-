@@ -12,7 +12,6 @@ public class ExitAction implements ButtonAction
     {
         MainTitle.stopMusic();
         Greenfoot.stop();
-        Button.soundOfbotton();
-    }    
+    }
 
 }
