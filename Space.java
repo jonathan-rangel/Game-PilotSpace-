@@ -23,7 +23,7 @@ public class Space extends World
     private static File records;
     private final static GreenfootSound soundTrack = new GreenfootSound("MusicInTheSpace.mp3");
     private static int levelNum = 1;
-
+    private static int bossAliens = 0;
     public Space()
     {    
         super(1280,720, 1, false);
@@ -44,28 +44,28 @@ public class Space extends World
         if(AlienShip.getAliensNum() == 3 && BossShip.returnStateOfTheBossShip() == false)
         {
             levelNum ++;
-
+            
             BossShip bossShip = new BossShip();
             addObject(bossShip,getWidth()/2,-100);
             
-            alienShips = new ArrayList();
-            AlienShip alienShip = new AlienShip();
-            addObject(alienShip,Greenfoot.getRandomNumber(1000),Greenfoot.getRandomNumber(300) * -1);
-            alienShips.add(alienShip);
+            if(bossAliens == 1)
+            {
+                BossShip bossShip1 = new BossShip();
+                addObject(bossShip1,Greenfoot.getRandomNumber(1000),Greenfoot.getRandomNumber(300) * -1);
+            }
+            if(bossAliens == 2)
+            {
+                BossShip bossShip1 = new BossShip();
+                addObject(bossShip1,Greenfoot.getRandomNumber(1000),Greenfoot.getRandomNumber(300) * -1);
 
-            alienShip = new AlienShip();
-            addObject(alienShip,Greenfoot.getRandomNumber(1000),Greenfoot.getRandomNumber(300) * -1);
-            alienShips.add(alienShip);
+                BossShip bossShip2 = new BossShip();
+                addObject(bossShip2,Greenfoot.getRandomNumber(1000),Greenfoot.getRandomNumber(300) * -1);
+            }
 
-            alienShip = new AlienShip();
-            addObject(alienShip,Greenfoot.getRandomNumber(1000),Greenfoot.getRandomNumber(300) * -1);
-            alienShips.add(alienShip);
-            
-            showText("Level " + levelNum, 1200, 10);
-            AlienShip.resetAliensNum();
-            
+            AlienShip.setAliensNum(0);
+            bossAliens ++;
         }
-        
+
         if(BossShip.returnStateOfTheBossShip())
         {
             alienShips = new ArrayList();
@@ -80,9 +80,18 @@ public class Space extends World
             alienShip = new AlienShip();
             addObject(alienShip,Greenfoot.getRandomNumber(1000),Greenfoot.getRandomNumber(300) * -1);
             alienShips.add(alienShip);
+
+            alienShip = new AlienShip();
+            addObject(alienShip,Greenfoot.getRandomNumber(1000),Greenfoot.getRandomNumber(300) * -1);
+            alienShips.add(alienShip);
+
+            alienShip = new AlienShip();
+            addObject(alienShip,Greenfoot.getRandomNumber(1000),Greenfoot.getRandomNumber(300) * -1);
+            alienShips.add(alienShip);
             
             
-            AlienShip.resetAliensNum();
+            AlienShip.setAliensNum(0);
+            showText("Level " + levelNum, 1200, 10);
             BossShip.setStateOfTheBossShip(false);
         }
         

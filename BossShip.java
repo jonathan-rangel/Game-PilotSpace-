@@ -14,7 +14,7 @@ public class BossShip extends Actor implements FireShip
     public static final int LIFE_BOSS_DECREASE = 10;
     public static final int NO_LIFE = 0;
     private int dir = 0;
-    private int lifeBoss = 50;
+    private int lifeBoss = 100;
     private static boolean bossDestroyed = false;
     private long lastAdded = System.currentTimeMillis();
 
